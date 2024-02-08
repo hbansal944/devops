@@ -4,7 +4,7 @@ pipeline {
     maven 'maven1'
   }
   stages {
-    stage('Checkout Stage') { // Capitalized names for better readability
+    stage('Checkout Stage') { 
       steps {
         checkout scmGit(
           branches: [[name: '*/main']],
@@ -13,9 +13,9 @@ pipeline {
         )
       }
     }
-    stage('Build Maven Stage') { // Capitalized names for better readability
+    stage('Build Maven Stage') {
       steps {
-        sh 'mvn clean install' // Use 'sh' for shell commands on Unix-like systems
+        bat 'mvn clean install' 
       }
     }
   }

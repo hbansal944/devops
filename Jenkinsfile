@@ -18,5 +18,10 @@ pipeline {
         bat 'mvn clean install' 
       }
     }
+    stage('Maven Test') {
+      steps {
+        bat 'mvn test'
+      }
+    }
   }
 }

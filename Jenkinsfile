@@ -4,7 +4,7 @@ pipeline {
     maven 'maven1'
   }
   stages {
-    stage('Checkout Stage') { 
+    stage('Checkout') { 
       steps {
         checkout scmGit(
           branches: [[name: '*/main']],
@@ -13,7 +13,7 @@ pipeline {
         )
       }
     }
-    stage('Build Maven Stage') {
+    stage('Maven Build') {
       steps {
         bat 'mvn clean install' 
       }
